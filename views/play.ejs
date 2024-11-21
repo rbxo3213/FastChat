@@ -1,0 +1,31 @@
+<!-- views/play.ejs -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>가상 기타 연주</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <h1>가상 기타 연주</h1>
+    <div>
+      <label for="chordMode">코드 유지 방식:</label>
+      <select id="chordMode">
+        <option value="hold">누르고 있을 때만</option>
+        <option value="sustain">한 번 누르면 유지</option>
+      </select>
+    </div>
+    <div>
+      <h2>악보 업로드</h2>
+      <input type="file" id="sheetMusicInput" accept="image/*" />
+      <img
+        id="sheetMusicImage"
+        src=""
+        alt="악보 이미지"
+        style="max-width: 100%"
+      />
+    </div>
+    <canvas id="guitarCanvas" width="800" height="400"></canvas>
+    <script src="/js/guitar.js"></script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!-- views/profile.ejs -->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title><%= user.username %>님의 프로필</title>
+  </head>
+  <body>
+    <h1><%= user.username %>님의 프로필</h1>
+    <h2>내가 올린 음악</h2>
+    <ul>
+      <% musics.forEach(function(music) { %>
+      <li>
+        <%= music.filename %>
+        <audio controls>
+          <source src="/uploads/<%= music.filename %>" type="audio/webm" />
+          브라우저가 audio 태그를 지원하지 않습니다.
+        </audio>
+      </li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
